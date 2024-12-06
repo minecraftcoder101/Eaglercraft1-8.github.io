@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 <meta name="description" content="EaglercraftX 1.8 Offline" />
 <meta name="keywords" content="eaglercraft, eaglercraftx, minecraft, 1.8, 1.8.8" />
-<title>EaglercraftX 1.8</title>
+<title>Minecraft 1.20.5</title>
 <meta property="og:locale" content="en-US" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="EaglercraftX 1.8" />
@@ -29,6 +29,32 @@ window.eaglercraftXOptsHints = {
 };
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	name: Convert JSON to HTML Table
+
+on:
+  push:
+    branches:
+      - main  # Adjust this branch as needed
+
+jobs:
+  convert-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Convert JSON to HTML Table
+        uses: Teebra/JSON-to-HTML-table@v2.0.0
+        with:
+          json-file: ./path/to/your/jsonfile.json  # Specify the path to your JSON file
+
+      - name: Upload HTML Table to Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: output_html 
+          path: output.html # The created file's name is output.html. Name cannot be changed
+
 
 </script>
 						<th>arguments.game.0</th>
